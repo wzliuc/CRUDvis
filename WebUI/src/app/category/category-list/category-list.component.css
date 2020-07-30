@@ -1,0 +1,9 @@
+.cat-container {
+    text-align: center;
+}
+
+.cat-item {
+    display: inline-block;
+    width: 15rem;
+    margin: 30px;
+}

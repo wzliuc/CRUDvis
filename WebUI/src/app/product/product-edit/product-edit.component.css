@@ -1,0 +1,15 @@
+.form-group.required label:after {
+    content:"*";
+    color:red;
+}
+
+.formContainer {
+    align-content: center;
+    width: 40%;
+    padding: 10px 0px;
+    margin: 0px auto;
+}
+.button-row button {
+    float: right;
+    margin-left: 6px;
+}

@@ -1,0 +1,11 @@
+.layout-router-outlet {
+    margin-top: 56px;
+}
+
+.layout-footer {
+    position: fixed;
+    bottom: 0px;
+    background-color: whitesmoke;
+    padding: 5px 20px;
+    border-bottom-style: solid;
+}

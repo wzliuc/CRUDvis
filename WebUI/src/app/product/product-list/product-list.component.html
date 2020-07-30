@@ -1,0 +1,31 @@
+<div class="prod-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Price</th>
+        <th scope="col">CategoryId</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products$ | async">
+        <th scope="row">{{ product.id }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.categoryId }}</td>
+        <td>
+          <a [routerLink]="['/products', product.id]">Detail </a>|
+          <a [routerLink]="['/products', 'edit', product.id]">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="button-row">
+  <a class="btn btn-outline-secondary" [routerLink]="['/categories']" role="button">Back</a>
+  <a class="btn btn-outline-primary" [routerLink]="['/products', 'edit', '0']" 
+    role="button">Add</a>
+</div>

@@ -1,0 +1,9 @@
+<div class="cat-container">
+    <div class="card border-dark cat-item" *ngFor="let category of categories$ | async" >
+      <div class="card-body">
+        <h5 class="card-title">{{ category.name }}</h5>
+        <p class="card-text">{{ category.description }}</p>
+        <a class="btn btn-primary" [routerLink]="['/categories', category.id]">Product List</a>
+      </div>
+    </div>
+  </div>

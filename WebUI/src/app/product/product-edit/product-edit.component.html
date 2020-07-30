@@ -1,0 +1,54 @@
+<div class="formContainer">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="productId">
+                Product Id
+            </label>
+            <input class="form-control" type="text" formControlName="productId" id="productId">
+        </div>
+        <div class="form-group required">
+            <label for="productName" [ngClass]="{'text-danger':checkValidity('productName')}">
+                Product Name
+            </label>
+            <input class="form-control" [ngClass]="{'is-invalid':checkValidity('productName')}"
+                type="text" formControlName="productName" id="productName">
+            <div *ngIf="checkValidity('productName')"
+                class="text-danger">
+                Product Name is required.
+            </div>
+        </div>
+        <div class="form-group required">
+            <label for="productPrice" [ngClass]="{'text-danger':checkValidity('productPrice')}">
+                Product Price
+            </label>
+            <input class="form-control" [ngClass]="{'is-invalid':checkValidity('productPrice')}"
+                type="text" formControlName="productPrice" id="productPrice">
+            <div *ngIf="checkValidity('productPrice')"
+                class="text-danger">
+                Product Price is required.
+            </div>
+        </div>
+        <div class="form-group required">
+            <label for="productCategoryId" [ngClass]="{'text-danger':checkValidity('productCategoryId')}">
+                Product Category
+            </label>
+            <input class="form-control" [ngClass]="{'is-invalid':checkValidity('productCategoryId')}"
+                type="text" formControlName="productCategoryId" id="productCategoryId">
+            <div *ngIf="checkValidity('productCategoryId')"
+                class="text-danger">
+                Product Category is required.
+            </div>
+        </div>
+
+    
+        <div class="button-row">
+            <a class="btn btn-outline-secondary" [routerLink]="['/categories', productToEdit.categoryId]" role="button">Back</a>
+            <button class="btn btn-outline-danger" type="button" *ngIf="productToEdit?.id !== 0" (click)="deleteProduct()">
+                Delete
+            </button>
+            <button class="btn btn-outline-primary" type="submit" [disabled]="!productForm.valid">
+                {{ productToEdit?.id === 0 ? 'Add' : 'Update' }}
+            </button>
+        </div>
+    </form>
+</div>

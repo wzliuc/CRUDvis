@@ -1,0 +1,25 @@
+<div class="container-fluid prod-detail-container" *ngIf="product$ | async as product">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td>Product ID</td>
+                <td>{{product.id}}</td>
+            </tr>
+            <tr>
+                <td>Product Name</td>
+                <td>{{product.name}}</td>
+            </tr>
+            <tr>
+                <td>Product Price</td>
+                <td>{{product.price}}</td>
+            </tr>
+            <tr>
+                <td>Product Category ID</td>
+                <td>{{product.categoryId}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a class="btn btn-outline-secondary" [routerLink]="['/categories', product.categoryId]" 
+    role="button">Back</a>
+</div>
